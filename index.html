@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agency Live Game Engine (MVP)</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">🎮</div>
+        <div class="brand__text">
+          <div class="brand__title">Agency Live Game Engine</div>
+          <div class="brand__sub">MVP (Web فقط)</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav__item" href="#/dashboard" data-route="dashboard">📊 لوحة التحكم</a>
+        <a class="nav__item" href="#/streamers" data-route="streamers">👤 الستريمرز</a>
+        <a class="nav__item" href="#/games" data-route="games">🕹️ الألعاب</a>
+        <a class="nav__item" href="#/rounds" data-route="rounds">⏱️ الجولات</a>
+        <a class="nav__item" href="#/moderation" data-route="moderation">🛡️ المود</a>
+        <a class="nav__item" href="#/settings" data-route="settings">⚙️ الإعدادات</a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <a class="btn btn--ghost" href="./overlay.html" target="_blank" rel="noreferrer">
+          🔴 فتح Overlay (للـ OBS)
+        </a>
+        <button class="btn btn--danger" id="resetDataBtn">إعادة ضبط البيانات</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar__left">
+          <h1 id="pageTitle">لوحة التحكم</h1>
+          <div class="muted" id="pageHint">إدارة النظام (محاكاة).</div>
+        </div>
+
+        <div class="topbar__right">
+          <div class="pill">
+            <span class="dot" id="liveDot"></span>
+            <span id="liveStatus">لا توجد جولة نشطة</span>
+          </div>
+          <button class="btn" id="startSimBtn">▶️ تشغيل محاكاة</button>
+          <button class="btn btn--ghost" id="stopSimBtn" disabled>⏹️ إيقاف</button>
+        </div>
+      </header>
+
+      <section class="content" id="viewRoot">
+        <!-- Rendered by app.js -->
+      </section>
+
+      <footer class="footer">
+        <div class="muted">
+          هذا MVP واجهة ويب فقط. البيانات تُخزّن في المتصفح عبر localStorage.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
